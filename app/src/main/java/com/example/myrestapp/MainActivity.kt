@@ -10,7 +10,7 @@ import java.math.BigInteger
 import java.security.MessageDigest
 import android.text.TextUtils
 import android.widget.Toast
-import com.example.myrestapp.R
+import android.content.Intent
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,14 +18,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
-        val etName = (findViewById<EditText>(R.id.editTextName)).text.toString()
-        val etPwd = (findViewById<EditText>(R.id.editTextPwd)).text.toString()
         val btn = findViewById<Button>(R.id.buttonLogIn)
 
         btn.setOnClickListener {
+            val etName = (findViewById<EditText>(R.id.editTextName)).text.toString()
+            val etPwd = (findViewById<EditText>(R.id.editTextPwd)).text.toString()
             validate(etName, etPwd)
             encrypt(etPwd)
+            autentify(etName, etPwd)
         }
     }
 
@@ -50,8 +50,13 @@ class MainActivity : AppCompatActivity() {
         return hashtext
     }
 
-    fun autentify():  {
-        return
+    fun autentify(etName: String, etPwd: String) {
+        if (etName == "SamuelePierotti" && etPwd == "1234") {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+        } else {
+            Toast.makeText(this, "Credenziali non valide", Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

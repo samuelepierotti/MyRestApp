@@ -6,7 +6,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.myrestapp.R
 
 class WebViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +16,8 @@ class WebViewActivity : AppCompatActivity() {
         val myWebView = WebView(applicationContext)
         myWebView.settings.javaScriptEnabled = true
         setContentView(myWebView)
-        myWebView.loadUrl()
+        myWebView.loadUrl("https://www.netflix.com/it/")
+
+
     }
 }
