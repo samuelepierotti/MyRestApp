@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyRestApp</string>
+    <string name="toastErrUser">Username errato</string>
+    <string name="toastErrPwd">Password errata</string>
+    <string name="toastAccesso">Accesso avvenuto correttamente</string>
+    <string name="toastNegato">Accesso negato, username o password errati</string>
+</resources>
